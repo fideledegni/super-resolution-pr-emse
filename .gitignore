@@ -1,0 +1,11 @@
+# Images #
+*.jpg
+*.JPG
+*.png
+*.PNG
+
+# References #
+ref/
+
+# Main #
+main.m

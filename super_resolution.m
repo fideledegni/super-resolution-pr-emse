@@ -6,7 +6,7 @@ function [S] = super_resolution(I, f, delta)
     if size(I,3)==3
         S = super_resolution_color(I, f, delta);
     elseif size(I,3)==1
-        S = super_resolution_grey(I, f, delta);
+        S = super_resolution_gray(I, f, delta);
     else
         S = 0;
         disp('Bad image format!!!');

@@ -4,8 +4,20 @@
 *.png
 *.PNG
 
+# Some exceptions #
+!light.png
+!llg.JPG
+!poudre.jpg
+!bird.jpg
+!pet.jpg
+!colors.jpg
+
+
 # References #
 ref/
 
 # Main #
 main.m
+
+# Matlab temp files #
+*.asv

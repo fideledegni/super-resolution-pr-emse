@@ -1,4 +1,4 @@
-function [S] = super_resolution_grey(I, f, delta)
+function [S] = super_resolution_gray(I, f, delta)
 % https://pdfs.semanticscholar.org/14fb/a4d942155b8678c1a601a683b943d67e42f3.pdf
 % super_resolution_grey(I, f, delta) Performs super-resolution on I by a factor f
 % NB: delta is between 0 and 1 ans is used for edge correction.
@@ -32,7 +32,7 @@ function [S] = super_resolution_grey(I, f, delta)
           [TC, Cboundaries] = extract_critical_data_points(TB, boundaries);
           [E, ~] = edge_correction(TC,Cboundaries, C, f, delta); % Critical data points after enlargement
           BP = breaking_points(E); % breaking points
-          fitted = curve_fitting(E, BP, f); % curve fitted with cubic Bezier
+          fitted = curve_fitting(E, BP, f); % curve fitted with cubic Bezier curves
           CF = uint8(zeros(f*m, f*n)); % the BW image
           nb = length(fitted); % number of closed boundaries
           for q=1:nb
@@ -57,7 +57,7 @@ function [S] = super_resolution_grey(I, f, delta)
       S = S + T;
       waitbar(k/255, wb, sprintf('%d%% completed', round(100*k/255)));
   end
-  delete(wb);
+  delete(wb); % delete waitbar
   
 % If parfor is used...
 %   % Add up all binary images
